@@ -10,6 +10,16 @@ target 'Example' do
   pod 'EasyPeasy'
   pod 'Siesta', '~> 1.0'
   pod 'Iconic', :git => 'https://github.com/dzenbot/Iconic.git', :tag => '1.3'
+  
+  post_install do |installer|
+      installer.pods_project.targets.each do |target|
+          if ['Iconic'].include? target.name
+              target.build_configurations.each do |config|
+                  config.build_settings['SWIFT_VERSION'] = '3.2'
+              end
+          end
+      end
+  end
   target 'ExampleTests' do
     inherit! :search_paths
     # Pods for testing
@@ -19,5 +29,6 @@ target 'Example' do
     inherit! :search_paths
     # Pods for testing
   end
+  
 
 end
