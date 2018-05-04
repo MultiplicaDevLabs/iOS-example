@@ -6,8 +6,8 @@ target 'Example' do
   use_frameworks!
 
   # Pods for Example
-  pod 'FoldingCell'
-  pod 'EasyPeasy'
+  pod 'FoldingCell', '3.0.3'
+  pod 'EasyPeasy', '1.6.0'
   pod 'Siesta', '~> 1.0'
   pod 'Iconic', :git => 'https://github.com/dzenbot/Iconic.git', :tag => '1.3'
   
